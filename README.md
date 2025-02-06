@@ -2,31 +2,43 @@
 Biblioteca para manhwas y mangas
 
 # Estructura de ficheros de la aplicacion
-* Modelos/
-  *  modelo.php //Modelo general de donde extenderan todas las clases modelo.
-  *  modeloUsuarios.php  //Modelo donde estara el CRUD de usuarios junto con metodos login y registro.
-  *  modeloManhwas.php  //Modelo donde estara el CRUD  de los manhwas.
-* Controladores/
-  *  controladorUsuarios.php //Controlador encargado de usar el modelo de usuarios
-  *  controladorManhwas.php  //Controlador encargador de usar el modelo de manhwas
-* Vistas/
-  *  vistaCabecera.php  // vista donde se mostrara un menu de navegacion junto con el titulo de la web.
-  *  vistaPie.php  // vista donde se mostrara una marca de copiright con el nombre y la fecha. 
-  *  Vista.php  //vista donde heredaran las demas vistas.
-  *  vistaGeneral.php  //vista donde sera redirigido el usuario una vez que se ha logueado, contendra tanto la cabecera como el pie de la pagina.
-  *  vistaLogin.php  //vista donde se mostrara un formulario de logueo.
-  *  vistaPerfil.php  //vista donde el usuario podra modificar sus datos. 
-  *  vistaRegistro.php  //vista donde se mostrara un formulario de registro junto a un boton por si el usuario ya esta registrado.  
-  *  vistaInsertar.php  //vista generica donde se podra insertar usuarios y manhwas dependiendo de que quiera hacer.
-  *  vistaModificar.php  //vista generica donde se podra modificar usuarios y manhwas dependiendo de que quiera hacer.
-* Seguridad/
-  * Config.php // Define las constantes de la base de datos.
-  * Seguridad.php  // Clase encargada de verificar los roles y comprobar si un usuario esta registrado.
-  * Conexion.php  // Clase encargada de establecer la conexion con la base de datos.
-  * .gitignore    // Encargado de no subir la configuracion de la base de datos.
-* css/
-  * registro.css // Hoja de estilos para el formulario de registro.
-  * login.css    // Hoja de estilos para el formulario de login.
-  * general.css  // Hoja de estilos generales por ejemplos: tablas, enlaces, titulos ...
-* js/
-  * script.js  // Scripts simples para hacer la web mas dinamica.
+BibliotecaMnahwas/
+│── modelos/
+│   ├── modelo.php               // Clase base con la conexión a la BD.
+│   ├── modelo_usuarios.php       // CRUD de usuarios, login y registro.
+│   ├── modelo_manhwas.php        // CRUD de manhwas y gestión de visitas/likes.
+│   ├── modelo_progreso.php       // Relación usuario-manhwa (pendiente/leyendo).
+│
+│── controladores/
+│   ├── controlador_usuarios.php  // Controlador de usuarios.
+│   ├── controlador_manhwas.php   // Controlador de manhwas.
+│   ├── controlador_progreso.php  // Controlador de progreso de lectura.
+│
+│── vistas/
+│   ├── partes/
+│   │   ├── vista_cabecera.php    // Menú de navegación.
+│   │   ├── vista_pie.php         // Pie de página.
+│   ├── usuario/
+│   │   ├── vista_login.php       // Formulario de login.
+│   │   ├── vista_registro.php    // Formulario de registro.
+│   │   ├── vista_perfil.php      // Edición de perfil.
+│   ├── manhwas/
+│   │   ├── vista_listado.php     // Listado y búsqueda.
+│   │   ├── vista_detalle.php     // Info de un manhwa y capítulos.
+│   │   ├── vista_insertar.php    // Agregar un manhwa.
+│   │   ├── vista_modificar.php   // Editar un manhwa.
+│   ├── progreso/
+│   │   ├── vista_progreso.php    // Lista de manhwas en "pendiente" o "leyendo".
+│
+│── seguridad/
+│   ├── config.php                // Configuración de BD.
+│   ├── seguridad.php             // Manejo de sesiones y roles.
+│   ├── conexion.php              // Conexión a la BD.
+│
+│── public/
+│   ├── css/                      // Estilos.
+│   ├── js/                       // Scripts dinámicos.
+│   ├── img/                      // Imágenes.
+│   ├── index.php                 // Página de inicio.
+│
+│── .gitignore                    // Evitar subir configuraciones
