@@ -42,4 +42,3 @@ BibliotecaMnahwas/
    * index.php                 // Página de inicio.
 
 * .gitignore                    // Evitar subir configuraciones
-prueba que funciona
