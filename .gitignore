@@ -1,0 +1,25 @@
+# Ignorar archivos de configuración sensibles
+seguridad/Config.php
+
+# Ignorar credenciales y configuraciones locales
+.env
+*.env
+
+# Ignorar caché y sesiones
+cache/
+session/
+
+# Ignorar archivos de logs
+logs/
+*.log
+
+# Ignorar archivos subidos por usuarios (si tienes uploads)
+uploads/
+
+# Ignorar dependencias y entornos locales
+vendor/
+node_modules/
+
+# Ignorar archivos del sistema operativo
+.DS_Store
+Thumbs.db
